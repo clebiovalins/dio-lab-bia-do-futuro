@@ -1,149 +1,136 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+<div align="center">
 
-## Contexto
+# 🤖 MR. Valins
+### Educador Financeiro com IA Generativa
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+*Finanças pessoais explicadas como um professor particular: simples, seguro e sem enrolação.*
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+![IA Generativa](https://img.shields.io/badge/IA-Generativa-8A2BE2?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Interface-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![DIO](https://img.shields.io/badge/Bootcamp-DIO-00C2A8?style=for-the-badge)
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
-
----
-
-## O Que Você Deve Entregar
-
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+</div>
 
 ---
 
-### 2. Base de Conhecimento
+## 💡 O Problema
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
+Muita gente não sabe por onde começar a investir, como organizar os gastos ou como se preparar para a aposentadoria.
 
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
+## 🎯 A Solução
 
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
+O **MR. Valins** é um agente **educador**: explica conceitos financeiros em linguagem simples e usa os **dados do próprio cliente** como exemplo prático.
 
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+> 🚫 Ele **ensina, não recomenda**. Nada de "compre isto": o objetivo é você entender e decidir com segurança.
 
 ---
 
-### 3. Prompts do Agente
+## ✨ O Que Ele Faz
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+| | |
+|---|---|
+| 📚 **Ensina** | CDI, Selic, ações, renda fixa e outros conceitos, com analogias fáceis |
+| 🔍 **Analisa gastos** | Mostra onde o dinheiro do cliente está indo, com base nas transações |
+| 🧭 **Orienta** | Sugere estratégias de organização financeira |
+| ✅ **Confirma** | Sempre pergunta se o cliente entendeu |
 
 ---
 
-### 5. Avaliação e Métricas
+## 🧠 Como Funciona
 
-Descreva como você avalia a qualidade do seu agente:
+```mermaid
+flowchart LR
+    A[👤 Cliente] --> B[💬 Chat Streamlit]
+    B --> C[🧠 Motor de IA]
+    D[(📂 Base de Conhecimento<br/>JSON + CSV)] --> C
+    C --> E{🛡️ Validação<br/>anti-alucinação}
+    E --> F[✅ Resposta]
+```
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+| Camada | Tecnologia |
+|---|---|
+| Interface | Streamlit |
+| LLM | GPT-4 via API |
+| Dados | JSON e CSV mockados |
+| Segurança | Validação de respostas |
 
 ---
 
-## Ferramentas Sugeridas
+## 🛡️ Segurança e Limites
 
-Todas as ferramentas abaixo possuem versões gratuitas:
+O agente **responde só com base nos dados fornecidos**, admite quando não sabe e nunca inventa informação financeira.
 
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+**Ele não:**
+- ❌ recomenda investimentos
+- ❌ faz previsões de mercado ou promete rentabilidade
+- ❌ realiza transações pelo chat
+- ❌ acessa dados bancários sensíveis
+- ❌ substitui um profissional certificado
 
 ---
 
-## Estrutura do Repositório
+## 💬 Exemplo
+
+> **Você:** Onde estou gastando mais?
+>
+> **MR. Valins:** Olhando suas transações de outubro, sua maior despesa é moradia, seguida de alimentação. Juntas, representam quase 80% dos seus gastos. Isso é bem comum! Quer que eu explique algumas estratégias de organização?
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+📦 dio-lab-bia-do-futuro
+├── 📁 data/      # Base de conhecimento (transações, perfil, produtos, atendimentos)
+├── 📁 docs/      # Documentação: agente, dados, prompts, métricas e pitch
+├── 📁 src/       # Código da aplicação
+├── 📁 assets/    # Imagens e diagramas
+└── 📁 examples/  # Referências do template
+```
+
+## 📖 Documentação
+
+| # | Documento | Conteúdo |
+|---|---|---|
+| 1 | [Documentação do Agente](docs/01-documentacao-agente.md) | Caso de uso, persona e arquitetura |
+| 2 | [Base de Conhecimento](docs/02-base-conhecimento.md) | Estratégia de dados |
+| 3 | [Prompts](docs/03-prompts.md) | System prompt, exemplos e edge cases |
+| 4 | [Métricas](docs/04-metricas.md) | Avaliação de qualidade |
+| 5 | [Pitch](docs/05-pitch.md) | Roteiro de apresentação |
+
+---
+
+## 🚀 Como Rodar
+
+```bash
+# 1. Clone o projeto
+git clone https://github.com/clebiovalins/dio-lab-bia-do-futuro.git
+cd dio-lab-bia-do-futuro
+
+# 2. Instale as dependências
+pip install streamlit openai
+
+# 3. Configure sua chave de API
+export OPENAI_API_KEY="sua-chave-aqui"
+
+# 4. Execute
+streamlit run src/app.py
 ```
 
 ---
 
-## Dicas Finais
+## 🧪 Aprendizados
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+- Engenharia de prompt na prática: o system prompt é a base do agente.
+- O mesmo prompt em **ChatGPT, Copilot e Claude** gerou respostas parecidas, mas em padrões diferentes. Nos testes de edge case (pergunta fora do escopo, como previsão do tempo), o ChatGPT foi o que mais se perdeu.
+
+---
+
+<div align="center">
+
+**Desenvolvido por Clébio Valins** · Bootcamp DIO · Bia do Futuro
+
+[![GitHub](https://img.shields.io/badge/GitHub-clebiovalins-181717?style=flat&logo=github)](https://github.com/clebiovalins)
+
+</div>
