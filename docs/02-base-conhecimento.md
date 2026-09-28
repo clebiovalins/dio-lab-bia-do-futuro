@@ -28,28 +28,31 @@ O produto  Fundo Imobiliário (FII) substituiu o fundo Multimercado, pois pessoa
 Existem duas possibilidades, injetar os dados diretamente no prompt  (Ctrl + C, Ctrl + V) 
 ou carregar os arquivos via código, Como no exemplo abaixo:
 
-***python
-import pandas as pd
+Aqui está o código do nosso projeto:
+
+```python
 import json
+import pandas as pd
 
 # CSVs
-historico = pd.read_csv(‘data/historico_atendimento.csv’)
-transaçoes = pd.read_csv('data/transaçoes.csv')
+historico = pd.read_csv("data/historico_atendimento.csv")
+transacoes = pd.read_csv("data/transaçoes.csv")
 
 # JSONs
-with open(‘data/perfil_investidor.json’, encoding=’utf-8’) as f:
-perfil = json.load(f)
+with open("data/perfil_investidor.json", "r", encoding="utf-8") as f:
+    perfil = json.load(f)
 
-with open('data/produtos_financeiros.json', 'r' encoding='utf-8') as f:
-   produtos = json.load(f)
-***
+with open("data/produtos_financeiros.json", "r", encoding="utf-8") as f:
+    produtos = json.load(f)
+```
+
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
 Para simplificar , podemos simplesmente  “injetar” os dados em nosso prompt,  garantindo que o agente tenha o melhor contexto possível. Lembrando que, ele tenha soluções mais robustas, o ideal é que essas informações sejam carregando dinamicamente para que possamos ganhar flexibilidade.
 
-***text
+```text
 DADOS DO CLIENTE e PERFIL (data/perfil_investidor.json):
 { 
 "nome": "João Silva", 
@@ -140,7 +143,7 @@ PRODUTOS DISPONIVEIS PARA ENSINO ( data/produtos_financeiros.json) :
     "indicado_para": "Perfil arrojado com foco no longo prazo"
   }
 ]
-***
+```
 
 ---
 
